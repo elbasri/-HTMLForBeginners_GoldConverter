@@ -1,0 +1,102 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+		<meta charset="utf8">
+		<title>
+		تطبيق محول الذهب
+		</title>
+	</head>
+	<body dir="rtl">
+		<section class="content">
+			<div class="container text-center">
+				<h1>
+				مرحبا بكم في تطبيق تحويل سعر الذهب
+				</h1>
+				<div class="row p-5 border border-primary">
+					<div class="col-md-4">
+						<p>
+						هذا محول الذهب من الاونصة للكيلوغرام، الغرام، الميليغرام، مع تحويل السعر.
+						</p>
+						<p>
+						شكرا لزيارتك ^^!
+						</p>
+					</div>
+					<div class="col-md-6">
+						<form>
+						  <div class="form-group">
+							<label for="goldraw">الذهب بالأوقية</label>
+							<input type="text" class="form-control " id="goldraw" name="goldraw" placeholder="أدخل عدد الأوقيات">
+						  </div>
+						  <div class="form-group">
+							<label for="">عيار الذهب</label>
+							<select id="iyar" name="iyar">
+								<option value="24">عيار 24</option>
+								<!--<option value="21">عيار 21</option>-->
+							</select>
+						  </div>
+						  <div class="form-group">
+							<label for="exampleInputEmail1">ثمن الأوقية</label>
+							<input type="text" class="form-control"  id="price" name="price" placeholder="أدخل ثمن الأوقية الحالي">
+						  </div>
+						 
+						  <button type="button" id="calculate" class="btn btn-primary">نَفذْ</button>
+						</form>
+					</div>
+				</div>
+				
+				<div id="result" style="display:none; border border-success">
+					 <div class="bg-primary text-light p-3 mb-2 ">
+						<h4>النتيجة</h4>
+					  </div>
+					  <div class="row">
+						<div class="p-3 mb-2 bg-primary text-white" id="kg" >0</div>
+						<div class="p-3 mb-2 bg-success text-white" id="g">0</div>
+						<div class="p-3 mb-2 bg-warning text-dark" id="mlg">0</div>
+					 </div>
+					  <div class="row">
+						<div class="p-3 mb-2 bg-secondary text-white" id="kgprice">0</div>
+						<div class="p-3 mb-2 bg-danger text-white" id="gprice">0</div>
+						<div class="p-3 mb-2 bg-info text-white"  id="mlgprice">0</div>
+					 </div>
+				</div>
+				  
+			</div>
+		</section>
+		<section class="content footer text-center p-3 mb-2">
+			<p>
+			تصميم وتطوير: <a href="https://www.elbasri.net/"> عبدالناصر البصري</a>.
+			</p>
+		</section>
+		
+		<script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+		<script>
+			$( "#calculate" ).click(function() {
+			  //alert( $( "#price" ).val() );
+			  $( "#result" ).show() ;
+			  var  goldraw = $( "#goldraw" ).val() ;
+			  var  iyar = $( "#iyar" ).val() ;
+			  var  price = $( "#price" ).val() ;
+			 // alert(iyar);
+			  if(iyar == 24){
+				  //31.103
+				  $( "#kg" ).text((goldraw/32.1507466).toFixed(2)+" كيلوغرام");
+				  $( "#g" ).text((goldraw*31.1034768).toFixed(2)+" غرام");
+				  $( "#mlg" ).text((goldraw*28349.5231).toFixed(2)+" ميليغرام");
+				  $( "#kgprice" ).text("ثمن الكيلوغرام: "+(price*32.1507466).toFixed(2));
+				  $( "#gprice" ).text("ثمن الغرام: "+((price/31.1034768)).toFixed(2));
+				  $( "#mlgprice" ).text("ثمن الميليغرام: "+(price/28349.5231).toFixed(2));
+			  }
+			  else if(iyar == 21){
+				  //35.55
+				  
+				  $( "#kg" ).text((goldraw/32.1507466).toFixed(2)+" كيلوغرام");
+				  $( "#g" ).text((goldraw*35.55).toFixed(2)+" غرام");
+				  $( "#mlg" ).text((goldraw*28349.5231).toFixed(2)+" ميليغرام");
+				  $( "#kgprice" ).text("ثمن الكيلوغرام: "+(price*32.1507466).toFixed(2));
+				  $( "#gprice" ).text("ثمن الغرام: "+((price/35.55)).toFixed(2));
+				  $( "#mlgprice" ).text("ثمن الميليغرام: "+(price/28349.5231).toFixed(2));
+			  }
+			});
+		</script>
+	</body>
+</html>
