@@ -3,7 +3,7 @@
 
 https://www.youtube.com/watch?v=a6bKSrU-ayQ
 
-Dump of an arabic tutorial about learning Javascript/Html/Css
+Dump of an arabic tutorial about learning Javascript/Html/Css, video youtube at:
 
 https://www.youtube.com/watch?v=a6bKSrU-ayQ
 
